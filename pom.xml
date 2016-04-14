@@ -27,4 +27,18 @@
         <module>stonehenge-entity</module>
         <module>extra/stonehenge-generator-tool</module>
     </modules>
+
+    <url>https://github.com/AdonisTang/stonehenge</url>
+
+    <developers>
+        <developer>
+            <id>king</id>
+            <name>Adonis.Tang</name>
+            <url>http://www.tashan10.com</url>
+            <organization>Bornstone</organization>
+            <roles>
+                <role>lead</role>
+            </roles>
+        </developer>
+    </developers>
 </project>
