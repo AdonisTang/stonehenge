@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bornstone.stonehenge.demo.mapper.TaskMapper">
+    <resultMap id="BaseResultMap" type="TaskEntity">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="task" property="task" jdbcType="VARCHAR"/>
+        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, task, created_time, updated_time
+    </sql>
+
+    <insert id="insert" parameterType="TaskEntity">
+        insert into task (
+        task, created_time, updated_time
+        )
+        values
+        (#{task},now(),now())
+        <selectKey resultType="INTEGER" keyProperty="id">SELECT LAST_INSERT_ID()</selectKey>
+    </insert>
+
+    <update id="update" parameterType="TaskEntity">
+        update task
+        <set>
+            <if test="task != null">
+                task = #{task},
+            </if>
+            updated_time = now(),
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from task where id=#{id}
+    </select>
+</mapper>

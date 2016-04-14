@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <!-- DispatcherServlet Context: defines this servlet's request-processing
+        infrastructure -->
+    <!-- Scans within the base package of the application for @Components to
+        configure as beans -->
+    <!-- @Controller, @Service, @Configuration, etc. -->
+    <context:component-scan base-package="com.bornstone.stonehenge.tool.generator"/>
+    <!--扫描定时任务 -->
+    <task:annotation-driven/>
+
+    <bean id="urlMapping"
+          class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+
+    <!-- FreeMarkerViewResolver -->
+    <bean id="freemarkerViewResolver"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="prefix" value=""/>
+        <property name="suffix" value=".ftl"/>
+        <property name="contentType" value="text/html; charset=UTF-8"/>
+        <property name="order" value="0"/>
+        <property name="exposeRequestAttributes" value="false"/>
+        <property name="exposeSessionAttributes" value="false"/>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="requestContextAttribute" value="requestContext"/>
+    </bean>
+
+    <bean id="freemarkerConfig"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/template/"/>
+        <property name="freemarkerVariables">
+            <map>
+            </map>
+        </property>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_exception_handler">
+                    com.bornstone.stonehenge.core.freemarker.FreemarkerExceptionHandler
+                </prop>
+                <!--<prop key="auto_include">macro/macro.ftl</prop>-->
+                <prop key="template_update_delay">5</prop>
+                <prop key="defaultEncoding">UTF-8</prop>
+                <prop key="url_escaping_charset">UTF-8</prop>
+                <prop key="locale">zh_CN</prop>
+                <prop key="boolean_format">true,false</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="date_format">yyyy-MM-dd</prop>
+                <prop key="time_format">HH:mm:ss</prop>
+                <prop key="number_format">0.######</prop>
+                <prop key="whitespace_stripping">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--InternalResourceViewResolver -->
+    <bean id="commonViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/html/"/>
+        <property name="suffix" value=".jsp"/>
+        <!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+        <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
+        <property name="order" value="1"/>
+    </bean>
+
+    <import resource="spring-biz.xml"/>
+</beans>

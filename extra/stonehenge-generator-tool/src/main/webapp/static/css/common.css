@@ -1,0 +1,482 @@
+/**
+*这里放一些标签的样式的公共定义
+*/
+/*标签选择器通用样式*/
+body {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+i {
+    font-style: normal;
+}
+
+dl, dd, h1, h2, h3, h4, h5, h6, p, form, pre, textarea {
+    margin: 0;
+}
+
+ol, li, ul {
+    margin: 0;
+    padding: 0;
+}
+
+td, th, input, select {
+    padding: 0;
+}
+
+input, select, textarea {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    hide-focus: expression(this.hideFocus=true);
+}
+
+select {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a, img {
+    border: 0;
+}
+
+a {
+    color: #9B4D4D;
+    text-decoration: none;
+    outline: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+a:hover {
+    color: #3673AC;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*间距控制*/
+.m0 {
+    margin: 0;
+}
+
+.m10 {
+    margin: 10px;
+    display: table;
+}
+
+.m0_10 {
+    margin: 0 10px;
+    display: table;
+}
+
+.ml10 {
+    margin-left: 10px;
+    display: inline;
+}
+
+.ml5 {
+    margin-left: 5px;
+    display: inline;
+}
+
+.ml3 {
+    margin-left: 3px;
+    display: inline;
+}
+
+.pl5 {
+    padding-left: 5px;
+    display: inline;
+}
+
+.mt5 {
+    margin-top: 5px;
+    display: inline;
+}
+
+.mt10 {
+    margin-top: 10px;
+    display: inline;
+}
+
+.mt15 {
+    margin-top: 15px;
+    display: inline;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+    display: inline;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+    display: inline;
+}
+
+/*行高控制*/
+.lh25 {
+    line-height: 25px;
+}
+
+.lh30 {
+    line-height: 30px;
+}
+
+.lh35 {
+    line-height: 35px;
+}
+
+.lh40 {
+    line-height: 40px;
+}
+
+/*缩进控制*/
+.ti5 {
+    text-indent: 5px;
+}
+
+/*类选择器通用样式-显示*/
+.dn {
+    display: none;
+}
+
+.db {
+    display: block;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.di {
+    display: inline;
+}
+
+.ovh {
+    overflow: hidden;
+}
+
+.vh {
+    visibility: hidden;
+}
+
+.vv {
+    visibility: visible;
+}
+
+.z {
+    *zoom: 1;
+}
+
+/*类选择器通用样式-颜色*/
+.g0 {
+    color: #000;
+}
+
+.g3 {
+    color: #333;
+}
+
+.g6 {
+    color: #666;
+}
+
+.g9 {
+    color: #999;
+}
+
+.wh {
+    color: white;
+}
+
+/*类选择器通用样式-字体*/
+.f12 {
+    font-size: 12px;
+}
+
+.f13 {
+    font-size: 13px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+.f24 {
+    font-size: 24px;
+}
+
+.fa {
+    font-family: Arial;
+}
+
+.ft {
+    font-family: Tahoma;
+}
+
+.fv {
+    font-family: Verdana;
+}
+
+.fs {
+    font-family: '宋体';
+}
+
+.fw {
+    font-family: '微软雅黑';
+}
+
+.n {
+    font-weight: normal;
+    font-style: normal;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.fw600 {
+    font-weight: 600;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tr {
+    text-align: right;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tj {
+    text-align: justify;
+}
+
+.tdl {
+    text-decoration: underline;
+}
+
+.tdn, .tdn:hover, a.tdl:hover {
+    text-decoration: none;
+}
+
+/*类选择器通用样式-对齐*/
+.lt0 {
+    letter-spacing: 0;
+}
+
+.lt1 {
+    letter-spacing: 1px;
+}
+
+.wrap {
+    white-space: nowrap;
+}
+
+.bk {
+    word-wrap: break-word;
+}
+
+.vm {
+    vertical-align: middle;
+}
+
+.vtb {
+    vertical-align: text-bottom;
+}
+
+.vb {
+    vertical-align: bottom;
+}
+
+.vt {
+    vertical-align: top;
+}
+
+.vn {
+    vertical-align: -2px;
+}
+
+/*类选择器通用样式-位置*/
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+.cl {
+    clear: both;
+}
+
+.rel {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
+.zx1 {
+    z-index: 1;
+}
+
+.zx2 {
+    z-index: 2;
+}
+
+/*类选择器通用样式-光标*/
+.poi {
+    cursor: pointer;
+}
+
+.def {
+    cursor: default;
+}
+
+/*块状元素水平居中*/
+.auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*清除浮动*/
+.fix {
+    *zoom: 1;
+}
+
+.fix:after {
+    display: block;
+    content: "clear";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/*基于display:table-cell的自适应布局*/
+.cell {
+    display: table-cell;
+    *display: inline-block;
+    width: 2000px;
+    *width: auto;
+}
+
+/*双栏自适应cell部分连续英文字符换行*/
+.cell_bk {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+/*单行文字溢出虚点显示*/
+.ell {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*通用模块*/
+.xfull {
+    width: 100%;
+}
+
+.yfull {
+    height: 100%;
+}
+
+.f1000 {
+    clear: both;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.blank {
+    clear: both;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+}
+
+.border_b_s {
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.border_b_d {
+    border-bottom: 1px dashed #E3E3E3;
+}
+
+#main {
+    display: table;
+}
+
+/*返回顶部*/
+#toTop {
+    width: 60px;
+    height: 60px;
+    background-position: 0px -300px;
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 80%;
+    margin-left: 510px;
+}
+
+#toTop .fixItem {
+    width: 60px;
+    height: 60px;
+}
+
+/*固定显示的导航条*/
+.fixNav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+/*背景设置*/
+.bg {
+    background: url(../images/background/bg.png) no-repeat left top;
+    overflow: hidden;
+}
+
+/*字体定义*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('font/iconfont.eot'); /* IE9*/
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('font/iconfont.woff') format('woff'), /* chrome、firefox */ url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('font/iconfont.svg#uxiconfont') format('svg'); /* iOS 4.1- */
+}
+
+.if {
+    font-family: "iconfont";
+    font-style: normal;
+}
