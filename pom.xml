@@ -14,12 +14,10 @@
         <module>stonehenge-common</module>
         <module>stonehenge-core</module>
         <module>stonehenge-spring</module>
-        <module>stonehenge-demo</module>
         <module>stonehenge-dao</module>
         <module>stonehenge-manager</module>
         <module>stonehenge-entity</module>
-        <module>extra/stonehenge-generator-tool</module>
-        <module>extra/stonehenge-mybatis-generator</module>
+        <module>stonehenge-extra</module>
     </modules>
 
     <url>https://github.com/AdonisTang/stonehenge</url>
