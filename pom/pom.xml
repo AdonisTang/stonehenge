@@ -9,152 +9,140 @@
     <packaging>pom</packaging>
 
     <properties>
-        <stonehenge.version>0.4-SNAPSHOT</stonehenge.version>
+        <!-- stonehenge libs -->
+        <project_version>0.4-SNAPSHOT</project_version>
 
-        <!-- 主要依赖库的版本定义 -->
-        <spring.version>3.2.8.RELEASE</spring.version>
+        <!-- DAO libs -->
+        <mysql_version>5.1.34</mysql_version>
+        <mybatis_version>3.2.8</mybatis_version>
+        <commons_dbcp_version>1.4</commons_dbcp_version>
 
-        <!-- Plugin的属性定义 -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.6</jdk.version>
+        <!-- Spring libs -->
+        <spring_version>3.2.9.RELEASE</spring_version>
+        <mybatis_spring_version>1.2.2</mybatis_spring_version>
+        <spring-data-jpa.version>1.6.0.RELEASE</spring-data-jpa.version>
+        <tomcat-jdbc.version>7.0.54</tomcat-jdbc.version>
+
+        <!-- Web libs -->
+        <freemarker_version>2.3.20</freemarker_version>
+        <servlet_version>3.0.1</servlet_version>
+        <ws_version>2.0</ws_version>
+
+        <!-- Log libs -->
+        <slf4j_version>1.7.7</slf4j_version>
+        <jcl_version>1.1</jcl_version>
+        <log4j_version>1.2.17</log4j_version>
+        <!-- Test libs -->
+        <junit_version>4.11</junit_version>
+
+        <!-- Tools libs -->
+        <commons_lang3_version>3.1</commons_lang3_version>
+        <commons_lang_version>2.5</commons_lang_version>
+        <commons_beanutils_version>1.8.3</commons_beanutils_version>
+        <commons_collections_version>3.2.1</commons_collections_version>
+        <commons_fileupload_version>1.2.1</commons_fileupload_version>
+        <commons_io_version>2.4</commons_io_version>
+        <fastjson_version>1.1.39</fastjson_version>
+        <aspectj_version>1.8.0</aspectj_version>
+        <commons_codec_version>1.4</commons_codec_version>
+        <javax_mail_version>1.4.7</javax_mail_version>
+        <joda_time_version>2.2</joda_time_version>
+        <oval_version>1.84</oval_version>
+        <apache_poi_version>3.2-FINAL</apache_poi_version>
+        <unitils_version>2.4</unitils_version>
+        <dbunit_hongli_version>2.4.8-hongli</dbunit_hongli_version>
+
+        <!-- plugin version -->
+        <maven_compiler_plugin_version>3.1</maven_compiler_plugin_version>
+        <maven_source_plugin_version>2.2.1</maven_source_plugin_version>
+        <maven_war_plugin_version>2.4</maven_war_plugin_version>
+        <maven_jar_plugin_version>2.4</maven_jar_plugin_version>
+
+        <!-- Other config -->
+        <file_encoding>UTF-8</file_encoding>
+        <jdk_version>1.6</jdk_version>
     </properties>
 
     <!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 和 artifactId 即可 -->
     <dependencyManagement>
         <dependencies>
+            <!-- stonehenge libs -->
             <dependency>
                 <groupId>com.bornstone</groupId>
                 <artifactId>stonehenge-common</artifactId>
-                <version>${stonehenge.version}</version>
+                <version>${project_version}</version>
             </dependency>
             <dependency>
                 <groupId>com.bornstone</groupId>
                 <artifactId>stonehenge-core</artifactId>
-                <version>${stonehenge.version}</version>
+                <version>${project_version}</version>
             </dependency>
             <dependency>
                 <groupId>com.bornstone</groupId>
                 <artifactId>stonehenge-entity</artifactId>
-                <version>${stonehenge.version}</version>
+                <version>${project_version}</version>
             </dependency>
             <dependency>
                 <groupId>com.bornstone</groupId>
                 <artifactId>stonehenge-dao</artifactId>
-                <version>${stonehenge.version}</version>
+                <version>${project_version}</version>
             </dependency>
             <dependency>
                 <groupId>com.bornstone</groupId>
                 <artifactId>stonehenge-manager</artifactId>
-                <version>${stonehenge.version}</version>
+                <version>${project_version}</version>
             </dependency>
             <dependency>
                 <groupId>com.bornstone</groupId>
                 <artifactId>stonehenge-spring</artifactId>
-                <version>${stonehenge.version}</version>
+                <version>${project_version}</version>
             </dependency>
 
             <!-- PERSISTENCE begin -->
             <!-- mybatis -->
             <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql_version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
-                <version>3.2.2</version>
+                <version>${mybatis_version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
-                <version>1.2.0</version>
-            </dependency>
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.21</version>
+                <version>${mybatis_spring_version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-dbcp</groupId>
                 <artifactId>commons-dbcp</artifactId>
-                <version>1.4</version>
+                <version>${commons_dbcp_version}</version>
             </dependency>
             <!-- PERSISTENCE end -->
-
-            <!-- WEB begin -->
-            <!-- spring mvc -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-
-            <!-- j2ee web spec -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.freemarker</groupId>
-                <artifactId>freemarker</artifactId>
-                <version>2.3.20</version>
-            </dependency>
-
-            <!-- WEB end -->
-
-            <!-- 文件上传 begin -->
-            <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>1.2.1</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.4</version>
-            </dependency>
-            <!-- 文件上传 end -->
 
             <!-- LOGGING begin -->
             <!-- slf4j -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.5</version>
+                <version>${slf4j_version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
-                <version>1.7.5</version>
+                <version>${slf4j_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging-api</artifactId>
+                <version>${jcl_version}</version>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
-                <version>1.2.17</version>
+                <version>${log4j_version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>javax.mail</groupId>
@@ -180,12 +168,12 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.1</version>
+                <version>${commons_lang3_version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
-                <version>1.8.3</version>
+                <version>${commons_beanutils_version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-logging</groupId>
@@ -196,100 +184,158 @@
             <dependency>
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
-                <version>3.2.1</version>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.mail</groupId>
-                <artifactId>mail</artifactId>
-                <version>1.4.7</version>
-            </dependency>
-
-            <!-- google java library -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>14.0.1</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>2.2.2</version>
-            </dependency>
-
-            <!-- joda -->
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>2.2</version>
+                <version>${commons_collections_version}</version>
             </dependency>
             <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time-jsptags</artifactId>
-                <version>1.1.1</version>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons_lang_version}</version>
             </dependency>
-            <!-- joda for jackson -->
             <dependency>
-                <groupId>com.fasterxml.jackson.datatype</groupId>
-                <artifactId>jackson-datatype-joda</artifactId>
-                <version>2.1.5</version>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons_codec_version}</version>
             </dependency>
-            <!-- GENERAL UTILS end -->
-
-            <!--Validate begin-->
             <dependency>
-                <groupId>net.sf.oval</groupId>
-                <artifactId>oval</artifactId>
-                <version>1.84</version>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj_version}</version>
             </dependency>
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
-                <version>1.7.3</version>
+                <version>${aspectj_version}</version>
             </dependency>
-            <!--Validate end-->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>${javax_mail_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda_time_version}</version>
+            </dependency>
 
-            <!-- OTHER TOOLS end -->
+            <!-- 文件上传 libs -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons_fileupload_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons_io_version}</version>
+            </dependency>
+
+            <!--Validate libs-->
+            <dependency>
+                <groupId>net.sf.oval</groupId>
+                <artifactId>oval</artifactId>
+                <version>${oval_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.unitils</groupId>
+                <artifactId>unitils</artifactId>
+                <version>${unitils_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dbunit</groupId>
+                <artifactId>dbunit</artifactId>
+                <version>${dbunit_hongli_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${apache_poi_version}</version>
+            </dependency>
+            <!-- GENERAL UTILS end -->
 
             <!-- TEST begin -->
             <!-- junit -->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.11</version>
+                <version>${junit_version}</version>
                 <scope>test</scope>
             </dependency>
+            <!-- TEST end -->
 
+            <!-- Spring begin -->
             <dependency>
-                <groupId>org.unitils</groupId>
-                <artifactId>unitils</artifactId>
-                <version>2.4</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring_version}</version>
             </dependency>
             <dependency>
-                <groupId>org.dbunit</groupId>
-                <artifactId>dbunit</artifactId>
-                <version>2.4.8-hongli</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring_version}</version>
             </dependency>
-
-            <!-- spring -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
+                <version>${version.spring}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data-jpa.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring_version}</version>
+            </dependency>
+            <!-- Spring end -->
+
+            <!-- WEB begin -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker_version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>3.2-FINAL</version>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet_version}</version>
+                <scope>provided</scope>
             </dependency>
-            <!-- TEST end -->
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>${ws_version}</version>
+            </dependency>
+            <!-- WEB end -->
         </dependencies>
     </dependencyManagement>
 
@@ -301,17 +347,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>${maven_compiler_plugin_version}</version>
                     <configuration>
-                        <source>${jdk.version}</source>
-                        <target>${jdk.version}</target>
+                        <source>${jdk_version}</source>
+                        <target>${jdk_version}</target>
                         <showWarnings>true</showWarnings>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
+                    <version>${maven_source_plugin_version}</version>
                     <executions>
                         <execution>
                             <phase>install</phase>
@@ -326,7 +372,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>${maven_war_plugin_version}</version>
                     <configuration>
                         <warName>${project.artifactId}</warName>
                     </configuration>
@@ -336,7 +382,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>${maven_jar_plugin_version}</version>
                     <configuration>
                         <archive>
                             <manifest>
