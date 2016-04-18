@@ -7,13 +7,13 @@
     <parent>
         <groupId>com.bornstone</groupId>
         <artifactId>stonehenge.framework</artifactId>
-        <version>0.3-SNAPSHOT</version>
+        <version>0.4-SNAPSHOT</version>
         <relativePath>pom/pom.xml</relativePath>
     </parent>
 
     <groupId>com.bornstone</groupId>
     <artifactId>stonehenge</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>stonehenge</name>
     <packaging>pom</packaging>
 

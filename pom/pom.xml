@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bornstone</groupId>
     <artifactId>stonehenge.framework</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>stonehenge-framework</name>
     <packaging>pom</packaging>
 
     <properties>
-        <stonehenge.version>0.3-SNAPSHOT</stonehenge.version>
+        <stonehenge.version>0.4-SNAPSHOT</stonehenge.version>
 
         <!-- 主要依赖库的版本定义 -->
         <spring.version>3.2.8.RELEASE</spring.version>

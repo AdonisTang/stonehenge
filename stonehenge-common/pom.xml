@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.bornstone</groupId>
         <artifactId>stonehenge</artifactId>
-        <version>0.3-SNAPSHOT</version>
+        <version>0.4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bornstone</groupId>
     <artifactId>stonehenge-common</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>stonehenge-common</name>
 
     <dependencies>
