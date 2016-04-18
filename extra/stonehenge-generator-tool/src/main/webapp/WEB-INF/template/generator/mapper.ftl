@@ -8,7 +8,7 @@
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
         <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
-        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="enable" property="enable" jdbcType="INTEGER"/>
         <#list table.fieldEntities?keys as key>
             <#assign field=table.fieldEntities[key]/>
             <result column="${field.name}" property="${field.formatName}" jdbcType="${field.fieldType}"/>
@@ -16,7 +16,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, created_time, updated_time, status, <#list table.fieldEntities?keys as key>${table.fieldEntities[key].name}
+        id, created_time, updated_time, enable, <#list table.fieldEntities?keys as key>${table.fieldEntities[key].name}
         , </#list>
     </sql>
 
@@ -30,13 +30,13 @@
                     </if>
                 </#if>
             </#list>
-            and status=0
+            and enable=0
         </where>
     </sql>
 
     <insert id="insert" parameterType="${table.upperCaseFirstOneName}Entity">
         insert into ${table.name} (
-        created_time, updated_time, status, <#list table.fieldEntities?keys as key>${table.fieldEntities[key].name}
+        created_time, updated_time, enable, <#list table.fieldEntities?keys as key>${table.fieldEntities[key].name}
         , </#list>
         )
         values
@@ -64,7 +64,7 @@
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
-        from ${table.name} where id=${id} and status=0
+        from ${table.name} where id=${id} and enable=0
     </select>
 
     <select id="countByQuery" parameterType="${table.upperCaseFirstOneName}QueryEntity" resultType="java.lang.Integer">

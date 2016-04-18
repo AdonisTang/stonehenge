@@ -6,7 +6,7 @@ CREATE TABLE `${table.name}` (
 	`created_time` DATETIME NOT NULL COMMENT '创建时间',
     `updated_time` DATETIME NOT NULL COMMENT '最后修改时间',
     <#if table.extendedFrom=="DELETEABLEENTITY">
-        `status` INT NOT NULL DEFAULT '0' COMMENT '状态:0-正常;1-删除',
+        `enable` INT NOT NULL DEFAULT '0' COMMENT '状态:0-正常;1-删除',
     </#if>
     <#list table.fieldEntities?keys as key>
         <#assign field=table.fieldEntities[key]/>
