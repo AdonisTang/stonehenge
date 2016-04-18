@@ -1,6 +1,6 @@
 package com.bornstone.stonehenge.demo.manager;
 
-import com.bornstone.stonehenge.core.testutils.DBUnitTestUtils;
+import com.bornstone.extra.spring.test.testutils.DBUnitTestUtils;
 import com.bornstone.stonehenge.demo.entity.TaskEntity;
 import com.bornstone.stonehenge.manager.exception.ManagerException;
 import org.junit.Assert;

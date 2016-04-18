@@ -1,4 +1,4 @@
-package com.bornstone.stonehenge.core.dbunit.xlssuport;
+package com.bornstone.extra.spring.test.dbunit.xlssuport;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dbunit.dataset.*;

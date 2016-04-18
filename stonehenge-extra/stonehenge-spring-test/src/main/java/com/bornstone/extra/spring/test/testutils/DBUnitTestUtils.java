@@ -1,6 +1,6 @@
-package com.bornstone.stonehenge.core.testutils;
+package com.bornstone.extra.spring.test.testutils;
 
-import com.bornstone.stonehenge.common.dbunit.XlsDataSetBeanFactory;
+import com.bornstone.extra.spring.test.dbunit.XlsDataSetBeanFactory;
 import org.apache.log4j.Logger;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.excel.XlsDataSet;

@@ -123,6 +123,12 @@
                 <artifactId>stonehenge-spring</artifactId>
                 <version>${project_version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.bornstone</groupId>
+                <artifactId>stonehenge-spring-test</artifactId>
+                <version>${project_version}</version>
+                <scope>test</scope>
+            </dependency>
 
             <!-- PERSISTENCE begin -->
             <!-- mybatis -->
@@ -247,6 +253,12 @@
                 <artifactId>joda-time</artifactId>
                 <version>${joda_time_version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jdbc</artifactId>
+                <version>${tomcat-jdbc.version}</version>
+                <scope>runtime</scope>
+            </dependency>
 
             <!-- 文件上传 libs -->
             <dependency>
@@ -291,7 +303,6 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit_version}</version>
-                <scope>test</scope>
             </dependency>
             <!-- TEST end -->
 
@@ -325,7 +336,6 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring_version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>

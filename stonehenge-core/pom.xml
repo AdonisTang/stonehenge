@@ -25,6 +25,10 @@
             <artifactId>stonehenge-manager</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.bornstone</groupId>
+            <artifactId>stonehenge-spring-test</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.mybatis</groupId>

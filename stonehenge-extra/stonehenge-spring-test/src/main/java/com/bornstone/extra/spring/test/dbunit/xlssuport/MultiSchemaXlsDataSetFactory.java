@@ -1,4 +1,4 @@
-package com.bornstone.stonehenge.core.dbunit.xlssuport;
+package com.bornstone.extra.spring.test.dbunit.xlssuport;
 
 import org.dbunit.database.AmbiguousTableNameException;
 import org.dbunit.dataset.DefaultDataSet;

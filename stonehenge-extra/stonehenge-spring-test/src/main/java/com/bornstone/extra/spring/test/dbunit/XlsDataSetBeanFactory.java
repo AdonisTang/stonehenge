@@ -1,8 +1,8 @@
-package com.bornstone.stonehenge.common.dbunit;
+package com.bornstone.extra.spring.test.dbunit;
 
 import com.bornstone.stonehenge.common.utils.BeanUtils;
 import org.apache.commons.beanutils.BeanUtilsBean;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.dbunit.dataset.Column;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;

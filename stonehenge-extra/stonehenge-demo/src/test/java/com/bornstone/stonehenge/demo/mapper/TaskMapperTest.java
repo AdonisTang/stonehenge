@@ -1,6 +1,6 @@
 package com.bornstone.stonehenge.demo.mapper;
 
-import com.bornstone.stonehenge.core.testutils.DBUnitTestUtils;
+import com.bornstone.extra.spring.test.testutils.DBUnitTestUtils;
 import com.bornstone.stonehenge.demo.entity.TaskEntity;
 import org.junit.Assert;
 import org.junit.Test;
