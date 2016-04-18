@@ -1,7 +1,7 @@
 package com.bornstone.stonehenge.manager.validate;
 
+import com.alibaba.fastjson.JSON;
 import com.bornstone.stonehenge.manager.exception.EntityValidateFailureException;
-import com.google.gson.Gson;
 import net.sf.oval.ConstraintViolation;
 import net.sf.oval.Validator;
 import org.apache.log4j.Logger;
@@ -34,7 +34,6 @@ public class StonehengeValidator {
         for (ConstraintViolation violation : result) {
             messages.add(violation.getMessage());
         }
-        Gson gson = new Gson();
-        return gson.toJson(messages);
+        return JSON.toJSONString(messages);
     }
 }

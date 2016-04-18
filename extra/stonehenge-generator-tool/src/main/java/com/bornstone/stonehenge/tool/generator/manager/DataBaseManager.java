@@ -1,7 +1,7 @@
 package com.bornstone.stonehenge.tool.generator.manager;
 
+import com.alibaba.fastjson.JSON;
 import com.bornstone.stonehenge.tool.generator.entity.DatabaseEntity;
-import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +23,7 @@ public class DataBaseManager {
 
     public void save(DatabaseEntity databaseEntity) {
         try {
-            Gson gson = new Gson();
-            String json = gson.toJson(databaseEntity);
+            String json = JSON.toJSONString(databaseEntity);
             saveToFile(databaseEntity.getPath(), json);
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
@@ -47,8 +46,7 @@ public class DataBaseManager {
                 path = path + "/project.define";
             }
             String content = getContentFromFile(path);
-            Gson gson = new Gson();
-            return gson.fromJson(content, DatabaseEntity.class);
+            return JSON.parseObject(content, DatabaseEntity.class);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }

@@ -1,6 +1,6 @@
 package com.bornstone.stonehenge.core.message;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
 
 /**
  * Created by King.Tang on 14-6-2.
@@ -12,8 +12,7 @@ public class MessageHelper {
         message.setMessage(messageContent);
         message.setData(data);
 
-        Gson gson = new Gson();
-        return gson.toJson(message);
+        return JSON.toJSONString(message);
     }
 
     public static String buildSuccessMessage(Object data) {
@@ -30,8 +29,7 @@ public class MessageHelper {
         message.setMessage(messageContent);
         message.setData(null);
 
-        Gson gson = new Gson();
-        return gson.toJson(message);
+        return JSON.toJSONString(message);
     }
 
     public static String buildFailureMessage() {
