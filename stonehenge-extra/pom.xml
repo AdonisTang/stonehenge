@@ -14,7 +14,7 @@
     <modules>
         <module>stonehenge-demo</module>
         <module>stonehenge-generator-tool</module>
-        <module>stonehenge-mybatis-generator</module>
+        <module>stonehenge-mybatis-generator-tool</module>
         <module>stonehenge-spring-test</module>
     </modules>
 

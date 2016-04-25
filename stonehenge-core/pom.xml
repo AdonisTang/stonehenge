@@ -19,7 +19,6 @@
         <dependency>
             <groupId>com.bornstone</groupId>
             <artifactId>stonehenge-manager</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.bornstone</groupId>

@@ -9,7 +9,7 @@
 
 #### 命令
 `
-    $ mvn clean mybatis-generator:generate
+    $ mvn clean stonehenge-mybatis-generator:generate
 `
 
 ##### 生成的文件仅供参考。
