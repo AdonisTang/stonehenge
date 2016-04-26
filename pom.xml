@@ -53,6 +53,7 @@
         <freemarker_version>2.3.20</freemarker_version>
         <servlet_version>3.0.1</servlet_version>
         <ws_version>2.0</ws_version>
+        <jackson_version>1.9.10</jackson_version>
 
         <!-- Log libs -->
         <slf4j_version>1.7.7</slf4j_version>
@@ -364,12 +365,16 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet_version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.ws.rs</groupId>
                 <artifactId>javax.ws.rs-api</artifactId>
                 <version>${ws_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson_version}</version>
             </dependency>
             <!-- WEB end -->
         </dependencies>
