@@ -1,9 +1,11 @@
 package com.bornstone.stonehenge.entity.query;
 
+import com.bornstone.stonehenge.common.utils.CollectionUtils;
 import com.bornstone.stonehenge.entity.entityenum.Order;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author xumin
@@ -27,6 +29,14 @@ public class PaginationQuery implements Serializable {
     private IOrderAble orderAble;
 
     private boolean isStayLastPage = true;
+
+    protected String getStringProperty(String property) {
+        return StringUtils.isEmpty(property) ? null : property;
+    }
+
+    protected <T> List<T> getListProperty(List<T> list) {
+        return CollectionUtils.isEmpty(list) ? null : list;
+    }
 
     protected Integer getDefaultPageSize() {
         return defaultPageSize;
