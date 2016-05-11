@@ -28,7 +28,7 @@ public class PagenationQueryExecutor<T extends IEntity> implements IManagerMetho
         }
         List<T> list = dao.selectByQuery(query);
 
-        if (manager instanceof IAfterPagenationQuery) {
+        if (manager instanceof IAfterPagenationQuery && list != null && !list.isEmpty()) {
             ((IAfterPagenationQuery) manager).afterPagenationQuery(list);
         }
 
