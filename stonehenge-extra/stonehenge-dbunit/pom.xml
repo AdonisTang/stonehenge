@@ -3,20 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>stonehenge</artifactId>
+        <artifactId>stonehenge-extra</artifactId>
         <groupId>com.bornstone</groupId>
         <version>0.4-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stonehenge-extra</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>stonehenge-demo</module>
-        <module>stonehenge-generator-tool</module>
-        <module>stonehenge-mybatis-generator-tool</module>
-        <module>stonehenge-spring-test</module>
-        <module>stonehenge-dbunit</module>
-    </modules>
+    <artifactId>stonehenge-dbunit</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+        </dependency>
+    </dependencies>
 </project>

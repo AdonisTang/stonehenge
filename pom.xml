@@ -77,7 +77,7 @@
         <oval_version>1.84</oval_version>
         <apache_poi_version>3.2-FINAL</apache_poi_version>
         <unitils_version>2.4</unitils_version>
-        <dbunit_hongli_version>2.4.8-hongli</dbunit_hongli_version>
+        <dbunit_version>2.4.8</dbunit_version>
 
         <!-- plugin version -->
         <maven_compiler_plugin_version>3.1</maven_compiler_plugin_version>
@@ -129,6 +129,11 @@
                 <artifactId>stonehenge-spring-test</artifactId>
                 <version>${project_version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.bornstone</groupId>
+                <artifactId>stonehenge-dbunit</artifactId>
+                <version>${project_version}</version>
             </dependency>
 
             <!-- PERSISTENCE begin -->
@@ -288,7 +293,7 @@
             <dependency>
                 <groupId>org.dbunit</groupId>
                 <artifactId>dbunit</artifactId>
-                <version>${dbunit_hongli_version}</version>
+                <version>${dbunit_version}</version>
             </dependency>
 
             <dependency>

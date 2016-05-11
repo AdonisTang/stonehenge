@@ -15,7 +15,11 @@
         <dependency>
             <groupId>com.bornstone</groupId>
             <artifactId>stonehenge-common</artifactId>
-            <version>${project_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bornstone</groupId>
+            <artifactId>stonehenge-dbunit</artifactId>
         </dependency>
 
         <dependency>
@@ -26,15 +30,6 @@
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.unitils</groupId>
-            <artifactId>unitils</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.dbunit</groupId>
-            <artifactId>dbunit</artifactId>
         </dependency>
 
         <dependency>
