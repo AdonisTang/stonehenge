@@ -11,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
  * <p><b>作者：</b>唐金景</p>
  */
 public class MD5Encrypt {
+    private static final String DEFAULT_SALT = "p+ZwKt5TRRiQuOxl";
 
     /**
      * <p><b>作用：</b>可设置加密位数 的 加密（可选位数：16，32）</p>
@@ -110,5 +111,15 @@ public class MD5Encrypt {
             e.printStackTrace();
         }
         return "";
+    }
+
+    /**
+     * 使用默认的Salt加密
+     *
+     * @param plaintText
+     * @return
+     */
+    public static final String encryptWithSalt(String plaintText) {
+        return encryptWithSalt(plaintText, DEFAULT_SALT);
     }
 }
