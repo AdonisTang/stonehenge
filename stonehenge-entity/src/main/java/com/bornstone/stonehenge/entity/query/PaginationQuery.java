@@ -1,7 +1,6 @@
 package com.bornstone.stonehenge.entity.query;
 
 import com.bornstone.stonehenge.common.utils.CollectionUtils;
-import com.bornstone.stonehenge.entity.entityenum.Order;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
@@ -26,7 +25,7 @@ public class PaginationQuery implements Serializable {
     private int startRow;
     private int endRow;
 
-    private IOrderAble orderAble;
+    private IOrderAble orderAble = new IdOrderAble();
 
     private boolean isStayLastPage = true;
 
@@ -234,17 +233,7 @@ public class PaginationQuery implements Serializable {
 
     public IOrderAble getOrderAble() {
         if (orderAble == null) {
-            return new IOrderAble() {
-                @Override
-                public String getOrderBy() {
-                    return "id";
-                }
-
-                @Override
-                public Order getOrderValue() {
-                    return Order.DESC;
-                }
-            };
+            return new IdOrderAble();
         }
         return orderAble;
     }
