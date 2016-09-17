@@ -18,6 +18,7 @@ import com.bornstone.stonehenge.manager.method.executor.advice.BeforeModifyExecu
 import com.bornstone.stonehenge.manager.query.IIdentityQueryAble;
 import com.bornstone.stonehenge.manager.query.IPagenationQueryAble;
 import com.bornstone.stonehenge.manager.query.IQueryAllAble;
+import com.bornstone.stonehenge.manager.query.IRPCPagenationQueryAble;
 import org.apache.log4j.Logger;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
@@ -94,6 +95,10 @@ public class ManagerProxy implements MethodInterceptor, Serializable {
                     PagenationQueryExecutor pagenationQueryExecutor = (PagenationQueryExecutor) executor;
                     PaginationQuery paginationQuery = (PaginationQuery) params[0];
                     return pagenationQueryExecutor.execute(paginationQuery, (IPagenationQueryAble) manager);
+                case RPC_PAGENATIONQUERY:
+                    RPCPagenationQueryExecutor rpcPagenationQueryExecutor = (RPCPagenationQueryExecutor) executor;
+                    PaginationQuery prcPaginationQuery = (PaginationQuery) params[0];
+                    return rpcPagenationQueryExecutor.execute(prcPaginationQuery, (IRPCPagenationQueryAble) manager);
                 case QUERYALL:
                     QueryAllExecutor queryAllExecutor = (QueryAllExecutor) executor;
                     return queryAllExecutor.execute(null, (IQueryAllAble) manager);

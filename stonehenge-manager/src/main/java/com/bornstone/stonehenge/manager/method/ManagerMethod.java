@@ -21,6 +21,7 @@ public enum ManagerMethod {
     MODIFY("modify", ModifyExecutor.class),
     QUERYBYID("queryById", IdentityQueryExecutor.class),
     PAGENATIONQUERY("query", PagenationQueryExecutor.class),
+    RPC_PAGENATIONQUERY("rpcQuery", RPCPagenationQueryExecutor.class),
     QUERYALL("queryAll", QueryAllExecutor.class),
 
     BEFOREADD("beforeAdd", BeforeAddExecutor.class),
