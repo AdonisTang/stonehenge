@@ -1,7 +1,7 @@
 package com.bornstone.stonehenge.common.utils;
 
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
+import org.joda.time.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -100,10 +100,59 @@ public class DateUtil {
      * @param time2 日期2
      * @return 返回的是两个日期相差的天数
      */
-    public static Integer datediff(Date time1, Date time2) {
+    public static Integer getDateDiffInt(Date time1, Date time2) {
         Long diff = time1.getTime() - time2.getTime();
         Long days = diff / (1000 * 60 * 60 * 24);
         return days.intValue();
+    }
+
+    /**
+     * 求两个时间的时间间隔
+     *
+     * @param data1
+     * @param date2
+     * @return
+     */
+    public static String getDateDiffStr(Date data1, Date date2) {
+        DateTime dataTime1 = new DateTime(data1);
+        DateTime dataTime2 = new DateTime(date2);
+
+        int years = Years.yearsBetween(dataTime1, dataTime2).getYears();
+        if (years >= 1) {
+            return years + "年前";
+        }
+
+        int months = Months.monthsBetween(dataTime1, dataTime2).getMonths();
+        if (months >= 1) {
+            return months + "个月前";
+        }
+
+        int days = Days.daysBetween(dataTime1, dataTime2).getDays();
+        if (days >= 1) {
+            return days + "天前";
+        }
+
+        int hours = Hours.hoursBetween(dataTime1, dataTime2).getHours();
+        if (hours >= 1) {
+            return hours + "小时前";
+        }
+
+        int minutes = Minutes.minutesBetween(dataTime1, dataTime2).getMinutes();
+        if (minutes >= 1) {
+            return minutes + "分钟前";
+        }
+
+        return "刚刚";
+    }
+
+    /**
+     * 求某个时间和当前时间的间隔
+     *
+     * @param date
+     * @return
+     */
+    public static String getDateDiffWithNow(Date date) {
+        return getDateDiffStr(date, new Date());
     }
 
     /**
