@@ -27,6 +27,7 @@ public class RPCPagenationQueryExecutor<T extends IEntity> implements IManagerMe
         IPaginationQuery<T, PaginationQuery> dao = manager.getDAO();
         int totalItems = dao.countByQuery(query);
         query.setTotalItem(totalItems);
+        query.afterTotalItemSet();
         if (totalItems <= 0) {
             rpc.setResult(new ArrayList<T>());
             return rpc;

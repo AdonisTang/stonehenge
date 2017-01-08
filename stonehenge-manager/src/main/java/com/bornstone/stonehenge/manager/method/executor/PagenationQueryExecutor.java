@@ -23,6 +23,7 @@ public class PagenationQueryExecutor<T extends IEntity> implements IManagerMetho
         IPaginationQuery<T, PaginationQuery> dao = manager.getDAO();
         int totalItems = dao.countByQuery(query);
         query.setTotalItem(totalItems);
+        query.afterTotalItemSet();
         if (totalItems <= 0) {
             return new ArrayList<T>();
         }

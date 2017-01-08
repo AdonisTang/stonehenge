@@ -135,7 +135,9 @@ public class PaginationQuery implements Serializable {
         }
 
         this.totalItem = tItem;
+    }
 
+    public void afterTotalItemSet() {
         int current = this.getPageNo().intValue();
         int lastPage = this.getTotalPage();
 
